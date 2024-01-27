@@ -1,16 +1,18 @@
-# INSERT IMPORTS
+"""
+ATM application with deposit, transfer, withdraw functions
+"""
 
 from pyfiglet import Figlet
-from ATM import *
+from ATM import ATM
 
 # WELCOME SCREEN
 
 fig = Figlet(font="isometric1")
 print(fig.renderText("ATM"))
 
-play_again = True
+PLAY_AGAIN = True
 
-while play_again:
+while PLAY_AGAIN:
 
     print("\n>>> MENU <<<\n")
     print("Enter '1' to VIEW your CHECKING account balance")
@@ -19,8 +21,12 @@ while play_again:
     print("Enter '4' to DEPOSIT funds into your CHECKING account")
     print("Enter '5' to WITHDRAW funds from your SAVINGS account")
     print("Enter '6' to DEPOSIT funds into your SAVINGS account")
-    print("Enter '7' to TRANSFER funds from your CHECKING account into your SAVINGS account")
-    print("Enter '8' to TRANSFER funds from your SAVINGS account into your CHECKING account\n")
+    print(
+        "Enter '7' to TRANSFER funds from your CHECKING account into your SAVINGS account"
+    )
+    print(
+        "Enter '8' to TRANSFER funds from your SAVINGS account into your CHECKING account\n"
+    )
 
     menu_choice = int(input("Enter option: "))  # APP CHOICE
 
@@ -44,9 +50,6 @@ while play_again:
 
     replay_choice = input("\nTry another translation? Enter Y/N...: ")  # APP REPLAY
 
-    if replay_choice.upper() == "Y":
-        play_again = True
-    else:
-        play_again = False
+    PLAY_AGAIN = bool(replay_choice.upper() == "Y")
 
 print("\nThanks! See you again next time!")  # APP END
