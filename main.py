@@ -3,7 +3,7 @@ ATM application with deposit, transfer, withdraw functions
 """
 
 from pyfiglet import Figlet
-from ATM import ATM
+from ATM import *
 
 # WELCOME SCREEN
 
